@@ -27,11 +27,11 @@ namespace LinaTheExplorer
         public static  void CountPoint(List<InputData> inputDatas)
         {
             
-            var summerMonth = inputDatas.Where(id => id._date.Month == 6 || id._date.Month == 7 || id._date.Month == 8);
+            //var summerMonth = inputDatas.Where(id => id._date.Month == 6 || id._date.Month == 7 || id._date.Month == 8);
 
-            var notEvenDate = inputDatas.Where(id => id._date.Day % 2 != 0);
+            //var notEvenDate = inputDatas.Where(id => id._date.Day % 2 != 0);
 
-            var priceUnderLine = inputDatas.Where(id => id._city.GetHashCode() <= maxPrice);
+            //var priceUnderLine = inputDatas.Where(id => id._city.GetHashCode() <= maxPrice);
 
             //  InputData [] inputDatasArray = inputDatas.ToArray(); // переведем в масив
 

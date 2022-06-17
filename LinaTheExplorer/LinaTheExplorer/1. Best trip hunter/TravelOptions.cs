@@ -19,6 +19,7 @@ namespace LinaTheExplorer
       public City _cityT { get; init; }
 
       private static int position = -1;
+      private const int maxPrice = 400;
         // public static List<InputData> ticketsProposal;
         private readonly InputData[] ticketsProposal;
         public static List<InputData> InputDatas()     // формуємо лист пропозицій
@@ -44,22 +45,27 @@ namespace LinaTheExplorer
             for (var i = 0; i < inputDatas.Count; i++)
             {
                 ticketsProposal[i] = inputDatas[i];
-              //  ticketsProposal[i]._score = Score();
-                if (inputDatas[i]._date.Month == 6 || inputDatas[i]._date.Month == 7 || inputDatas[i]._date.Month == 8)
+
+
+                var summerMonth = inputDatas[i]._date.Month == 6 || inputDatas[i]._date.Month == 7 || inputDatas[i]._date.Month == 8;
+                var notEvenDate = inputDatas[i]._date.Day % 2 != 0;
+                var priceUnderLine = inputDatas[i]._city.GetHashCode() <= maxPrice;
+
+
+
+
+                if (summerMonth && notEvenDate && priceUnderLine)
                 { ticketsProposal[i]._score = 300; }
+                else if ((summerMonth && notEvenDate) || (summerMonth && priceUnderLine) || (notEvenDate && priceUnderLine))
+                { ticketsProposal[i]._score = 200; }
                 else
                 { ticketsProposal[i]._score = 100; }
-                //return 
+                
             }
-          //  var ticketsProp = new List<>()
+          
         }
 
-        //public int Score( List<InputData> inputDatas)
-        //{
-        //    if (inputDatas[i]._date.Month == 8)
-
-        //        return ScoreT;
-        //}
+      
 
 
 
