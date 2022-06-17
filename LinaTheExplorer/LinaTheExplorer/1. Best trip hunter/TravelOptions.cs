@@ -7,21 +7,21 @@ using System.Collections;
 
 namespace LinaTheExplorer
 {
-    class TravelOptions //: IEnumerable, IEnumerator
+    class TravelOptions : IEnumerable, IEnumerator
     {
     
       public static List<InputData> inputDatas { get; set; }
 
-        public static int ScoreT { get; set; } = 0;
+      public static int ScoreT { get; set; } = 0;
 
       private static int countOfProposal = 10;
-      public DateTime _dateT { get; private set; }
-      public City _cityT { get; private set; }
+      public DateTime _dateT { get; init; }
+      public City _cityT { get; init; }
 
       private static int position = -1;
-      public static List<InputData> ticketsProposal;
-
-      public static List<InputData> InputDatas()     // формуємо лист пропозицій
+        // public static List<InputData> ticketsProposal;
+        private readonly InputData[] ticketsProposal;
+        public static List<InputData> InputDatas()     // формуємо лист пропозицій
         {
             List<InputData> inputDatas = new List<InputData>();
 
@@ -33,59 +33,75 @@ namespace LinaTheExplorer
             return inputDatas;
         }
 
-        public TravelOptions(List<InputData> inputDatas)  // конструктор для реалізаціі 
+        public TravelOptions (List<InputData> inputDatas)  // конструктор для реалізаціі 
         {
-         
+            InputData[] arrayInputData = inputDatas.ToArray();
 
-            ticketsProposal = new List<InputData>(inputDatas.Count);
+
+            //  ticketsProposal = new List<InputData>(inputDatas.ToArray().Length);
+            ticketsProposal = new InputData[arrayInputData.Length];
+
             for (var i = 0; i < inputDatas.Count; i++)
             {
                 ticketsProposal[i] = inputDatas[i];
-                
+              //  ticketsProposal[i]._score = Score();
+                if (inputDatas[i]._date.Month == 6 || inputDatas[i]._date.Month == 7 || inputDatas[i]._date.Month == 8)
+                { ticketsProposal[i]._score = 300; }
+                else
+                { ticketsProposal[i]._score = 100; }
+                //return 
             }
-
+          //  var ticketsProp = new List<>()
         }
 
+        //public int Score( List<InputData> inputDatas)
+        //{
+        //    if (inputDatas[i]._date.Month == 8)
 
-    //    IEnumerator IEnumerable.GetEnumerator()
-    //    {
-    //        return (IEnumerator)GetEnumerator();
-    //    }
-    //    public InputData Current
-    //    {
-    //        get
-    //        {
-    //            try
-    //            {
-    //                return ticketsProposal[position];
-    //            }
-    //            catch (IndexOutOfRangeException)
-    //            {
-    //                throw new InvalidOperationException();
-    //            }
-    //        }
-    //    }
+        //        return ScoreT;
+        //}
 
-    //    public bool MoveNext()
-    //    {
-    //        position++;
-    //        return position < ticketsProposal.Count;
-    //    }
 
-    //    public void Reset()
-    //    {
-    //        position = -1;
-    //    }
 
-    //    object IEnumerator.Current => Current;
-    //    public TravelOptions GetEnumerator()
-    //    {
-    //        return new TravelOptions(ticketsProposal);
-    //    }
-    //}
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return (IEnumerator)GetEnumerator();
+        }
+        public InputData Current
+        {
+            get
+            {
+                try
+                {
+                    return ticketsProposal[position];
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+        }
+
+        public bool MoveNext()
+        {
+            position++;
+            return position < ticketsProposal.Length;
+        }
+
+        public void Reset()
+        {
+            position = -1;
+        }
+
+        object IEnumerator.Current => Current;
+        public TravelOptions GetEnumerator()
+        {
+            return new TravelOptions(ticketsProposal.ToList());
+        }
+    }
 
 
 
 
 }
-}
+

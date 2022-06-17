@@ -8,14 +8,14 @@ namespace LinaTheExplorer
 {
    public class InputData
     {
-      public DateTime _date { get; private set; }
-      public City _city { get; private set; }
-
-        public InputData(DateTime date, City city)
+      public DateTime _date { get; init; }
+      public City _city { get; init; }
+        public int _score { get;  set; } 
+        public InputData(DateTime date, City city, int score = 0)
         {
             _date = date;
             _city = city;
-
+            _score = score;
         }
 
     }

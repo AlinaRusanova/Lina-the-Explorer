@@ -37,35 +37,35 @@ namespace LinaTheExplorer
 
             var tickets = new TravelOptions(inputDatas);
 
-            
 
 
-            //foreach (InputData item in inputDatasArray)
-            //{
-            //    Console.WriteLine(item._city);
-            //}
+
+            foreach (var item in tickets)
+            {
+                Console.WriteLine( $"score: {item._score}, data: {item._date.ToShortDateString()}, city: {item._city}");
+            }
 
 
-            
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-           // 
 
-           //var ticketsProposal = new List<InputData>(inputDatasArray.Length);
-          
-           // for (var i = 0; i < inputDatasArray.Length; i++)
-           // {
-           //     ticketsProposal[i] = inputDatasArray[i];
-           // }
+
+
+
+
+
+
+
+
+
+
+            // 
+
+            //var ticketsProposal = new List<InputData>(inputDatasArray.Length);
+
+            // for (var i = 0; i < inputDatasArray.Length; i++)
+            // {
+            //     ticketsProposal[i] = inputDatasArray[i];
+            // }
 
 
 
