@@ -1,28 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections;
 
 namespace LinaTheExplorer
 {
     class TravelOptions : IEnumerable, IEnumerator
     {
-    
-      public static List<InputData> inputDatas { get; set; }
-
-      public static int ScoreT { get; set; } = 0;
-
       private static int countOfProposal = 10;
-      public DateTime _dateT { get; init; }
-      public City _cityT { get; init; }
+      private const int maxPrice = 400;
+
 
       private static int position = -1;
-      private const int maxPrice = 400;
-        // public static List<InputData> ticketsProposal;
-        private readonly InputData[] ticketsProposal;
-        public static List<InputData> InputDatas()     // формуємо лист пропозицій
+
+      private readonly InputData[] ticketsProposal;
+
+      public static List<InputData> InputDatas()     
         {
             List<InputData> inputDatas = new List<InputData>();
 
@@ -30,16 +23,13 @@ namespace LinaTheExplorer
             {
                 inputDatas.Add(new InputData(EnumRandom.RandomDateTime(), EnumRandom.RandomEnum<City>()));
             }
-
             return inputDatas;
         }
 
-        public TravelOptions (List<InputData> inputDatas)  // конструктор для реалізаціі 
+        public TravelOptions (List<InputData> inputDatas)  
         {
             InputData[] arrayInputData = inputDatas.ToArray();
 
-
-            //  ticketsProposal = new List<InputData>(inputDatas.ToArray().Length);
             ticketsProposal = new InputData[arrayInputData.Length];
 
             for (var i = 0; i < inputDatas.Count; i++)
@@ -55,18 +45,21 @@ namespace LinaTheExplorer
 
 
                 if (summerMonth && notEvenDate && priceUnderLine)
-                { ticketsProposal[i]._score = 300; }
+                {ticketsProposal[i]._score = 300; }
                 else if ((summerMonth && notEvenDate) || (summerMonth && priceUnderLine) || (notEvenDate && priceUnderLine))
                 { ticketsProposal[i]._score = 200; }
                 else
                 { ticketsProposal[i]._score = 100; }
-                
+              
+               
             }
           
         }
 
-      
-
+        public  List<InputData> SortByScore()
+        {
+            return ticketsProposal.OrderByDescending(tp => tp._score).ThenBy(tp => tp._date).ToList();
+        }
 
 
         IEnumerator IEnumerable.GetEnumerator()

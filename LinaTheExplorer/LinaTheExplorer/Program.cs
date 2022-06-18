@@ -6,7 +6,7 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            //  TravelOptions.InputDatas();
+           
             var allTickets = TravelOptions.InputDatas();
 
             CountofPoint.ShowAll(allTickets);
@@ -16,6 +16,7 @@ namespace LinaTheExplorer
 
 
             CountofPoint.CountPoint(allTickets);
+
         }
 
 
