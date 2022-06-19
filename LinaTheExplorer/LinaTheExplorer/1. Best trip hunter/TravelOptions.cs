@@ -42,17 +42,16 @@ namespace LinaTheExplorer
                 var priceUnderLine = inputDatas[i]._city.GetHashCode() <= maxPrice;
 
 
-
-
                 if (summerMonth && notEvenDate && priceUnderLine)
-                {ticketsProposal[i]._score = 300; }
+                {ticketsProposal[i]._score = 100; }
                 else if ((summerMonth && notEvenDate) || (summerMonth && priceUnderLine) || (notEvenDate && priceUnderLine))
-                { ticketsProposal[i]._score = 200; }
+                { ticketsProposal[i]._score = 66; }
+                else if ((summerMonth || notEvenDate|| priceUnderLine) )
+                { ticketsProposal[i]._score = 33; }
                 else
-                { ticketsProposal[i]._score = 100; }
-              
-               
-            }
+                { ticketsProposal[i]._score = 0; }
+
+                }           
           
         }
 

@@ -40,7 +40,7 @@ namespace LinaTheExplorer
 
             foreach (var item in tickets)
             {
-                Console.WriteLine( $"score: {item._score}, data: {item._date.ToShortDateString()}, city: {item._city}");
+                Console.WriteLine( $"score: {item._score}, data: {item._date.ToShortDateString()}, city: {item._city}, price: {item._city.GetHashCode()}");
             }
 
         }
