@@ -5,13 +5,10 @@ using System.Collections;
 
 namespace LinaTheExplorer
 {
-    class TravelOptions : IEnumerable, IEnumerator
+    class TravelOptions 
     {
       private static int countOfProposal = 10;
       private const int maxPrice = 400;
-
-
-      private static int position = -1;
 
       private readonly InputData[] ticketsProposal;
 
@@ -37,22 +34,36 @@ namespace LinaTheExplorer
                 ticketsProposal[i] = inputDatas[i];
 
 
-                var summerMonth = inputDatas[i]._date.Month == 6 || inputDatas[i]._date.Month == 7 || inputDatas[i]._date.Month == 8;
+                var summerMonth = Enumerable.Range(6, 8).Contains(inputDatas[i]._date.Month);
                 var notEvenDate = inputDatas[i]._date.Day % 2 != 0;
                 var priceUnderLine = inputDatas[i]._city.GetHashCode() <= maxPrice;
 
+                var list = new List<bool>() { summerMonth, notEvenDate, priceUnderLine } ;
 
-                if (summerMonth && notEvenDate && priceUnderLine)
-                {ticketsProposal[i]._score = 100; }
-                else if ((summerMonth && notEvenDate) || (summerMonth && priceUnderLine) || (notEvenDate && priceUnderLine))
-                { ticketsProposal[i]._score = 66; }
-                else if ((summerMonth || notEvenDate|| priceUnderLine) )
-                { ticketsProposal[i]._score = 33; }
-                else
-                { ticketsProposal[i]._score = 0; }
+                foreach (var item in list)
+                {
+                         if (item == true)
+                        {
+                            ticketsProposal[i]._score += 33;
+                        }
 
-                }           
-          
+                }
+
+
+                #region old iff constr
+                //if (summerMonth && notEvenDate && priceUnderLine)
+                //{ticketsProposal[i]._score = 100; }
+                //else if ((summerMonth && notEvenDate) || (summerMonth && priceUnderLine) || (notEvenDate && priceUnderLine))
+                //{ ticketsProposal[i]._score = 66; }
+                //else if ((summerMonth || notEvenDate|| priceUnderLine) )
+                //{ ticketsProposal[i]._score = 33; }
+                //else
+                //{ ticketsProposal[i]._score = 0; }
+
+                #endregion 
+
+            }
+
         }
 
         public  List<InputData> SortByScore()
@@ -61,41 +72,6 @@ namespace LinaTheExplorer
         }
 
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return (IEnumerator)GetEnumerator();
-        }
-        public InputData Current
-        {
-            get
-            {
-                try
-                {
-                    return ticketsProposal[position];
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    throw new InvalidOperationException();
-                }
-            }
-        }
-
-        public bool MoveNext()
-        {
-            position++;
-            return position < ticketsProposal.Length;
-        }
-
-        public void Reset()
-        {
-            position = -1;
-        }
-
-        object IEnumerator.Current => Current;
-        public TravelOptions GetEnumerator()
-        {
-            return new TravelOptions(ticketsProposal.ToList());
-        }
     }
 
 

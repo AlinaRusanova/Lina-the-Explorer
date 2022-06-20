@@ -18,7 +18,6 @@ namespace LinaTheExplorer
 
         public static DateTime RandomDateTime()
         {      
-            DateTime datetoday = DateTime.Now;
 
             int rndYear = random.Next(2022, 2023);
             int rndMonth = random.Next(1, 12);
