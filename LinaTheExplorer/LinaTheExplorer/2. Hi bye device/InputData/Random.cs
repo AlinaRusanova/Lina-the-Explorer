@@ -16,5 +16,14 @@ namespace Hi_bye_device
             return (T)random.GetValue(EnumRandom.random.Next(random.Length));
         
         }
+        
+        public static void PrintAt(this string str, ConsoleColor color)
+         {
+        Console.ForegroundColor = color;
+        Console.Write(str);
+        Console.ResetColor();
+         }
     }
+
+   
 }

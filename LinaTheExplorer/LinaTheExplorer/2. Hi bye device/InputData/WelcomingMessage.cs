@@ -9,7 +9,7 @@ namespace Hi_bye_device
     public class WelcomingMessage
     {
 
-        public string [] GenerateWelcomeList()
+        public static string [] GenerateWelcomeList()
         {
             string[] welcomingMessage = new[]
             {
