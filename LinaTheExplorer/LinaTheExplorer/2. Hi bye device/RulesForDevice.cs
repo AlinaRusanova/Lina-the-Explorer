@@ -25,7 +25,7 @@ namespace Hi_bye_device
                 var sameFirstAndLastNumber = rulesForSelecting[i].CarNumber.ToString().EndsWith(rulesForSelecting[i].CarNumber.ToString().ElementAt(0));
                 var sumOfElementsInNumber = SumNumber(rulesForSelecting[i].CarNumber) >= 20 && SumNumber(rulesForSelecting[i].CarNumber) <=30;
 
-                var notPrimary = !ashole && tooTalkative && vowelsInName && sameFirstAndLastNumber && sumOfElementsInNumber;
+                var notPrimary = !ashole || !tooTalkative || vowelsInName || !sameFirstAndLastNumber || !sumOfElementsInNumber;
 
 
                 if (rulesForSelecting[i].DriverWaitingTime > 100)
