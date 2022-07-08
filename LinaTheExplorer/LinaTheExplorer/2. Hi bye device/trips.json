@@ -1,0 +1,81 @@
+[
+    {
+        "welcomeMsg": "Hi! Let's go?",
+        "driverName": "Tony",
+        "carModel": "Tesla",
+        "carNo": "1234",
+        "waitTime": "1"
+    },
+    {
+        "welcomeMsg": "it's ok carNo > 30",
+        "driverName": "Bob",
+        "carModel": "Renault",
+        "carNo": "9994",
+        "waitTime": "8"
+    },
+    {
+        "welcomeMsg": "it's ok carNo < 20",
+        "driverName": "Ivy",
+        "carModel": "Mercedes",
+        "carNo": "9910",
+        "waitTime": "6"
+    },
+    {
+        "welcomeMsg": "I'm not too late",
+        "driverName": "Ivy",
+        "carModel": "Bentley",
+        "carNo": "1234",
+        "waitTime": "100"
+    },
+    {
+        "welcomeMsg": "Hi I'm too late and talkative but don't swear. Ride with me",
+        "driverName": "Archie",
+        "carModel": "Mitsubishi",
+        "carNo": "9993",
+        "waitTime": "101"
+    },
+
+
+    {
+        "welcomeMsg": "Hello I'm too talkative sometimes maybe even now I'm not sure actually oh sorry I'm Tanner and you?",
+        "driverName": "Tanner",
+        "carModel": "Peugeot",
+        "carNo": "1234",
+        "waitTime": "32"
+    },
+    {
+        "welcomeMsg": "Hello! Who are you *** and why are you here ***?",
+        "driverName": "Temperance",
+        "carModel": "Jaguar",
+        "carNo": "1234",
+        "waitTime": "101"
+    },
+    {
+        "welcomeMsg": "***!so nice day",
+        "driverName": "Temperance",
+        "carModel": "Lada",
+        "carNo": "1234",
+        "waitTime": "4"
+    },
+    {
+        "welcomeMsg": "carNo's cool,isnt?",
+        "driverName": "Jemma",
+        "carModel": "Hyundai",
+        "carNo": "2002",
+        "waitTime": "11"
+    },
+    {
+        "welcomeMsg": "my numbers dont fit",
+        "driverName": "Milo",
+        "carModel": "BWM",
+        "carNo": "9932",
+        "waitTime": "49"
+    },
+    {
+        "welcomeMsg": "My name's Olololo",
+        "driverName": "Olololo",
+        "carModel": "BWM",
+        "carNo": "2331",
+        "waitTime": "30"
+    }
+]
