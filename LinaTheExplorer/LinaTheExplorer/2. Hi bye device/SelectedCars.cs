@@ -20,7 +20,7 @@ namespace Hi_bye_device
                 var sameFirstAndLastNumber = car.CarNumber.ToString().EndsWith(car.CarNumber.ToString().ElementAt(0));
                 var sumOfElementsInNumber = SumNumber(car.CarNumber) > 20 && SumNumber(car.CarNumber) < 30;
 
-                var notPrimary = ashole || tooTalkative || vowelsInName || sameFirstAndLastNumber || sumOfElementsInNumber;
+                var badCar = ashole || tooTalkative || vowelsInName || sameFirstAndLastNumber || sumOfElementsInNumber;
 
 
                 if (car.DriverWaitingTime > 100)
@@ -30,7 +30,7 @@ namespace Hi_bye_device
                 }
                 else
                 {
-                    if (!notPrimary)
+                    if (!badCar)
                     { selectingCars.Add(car); }
                 }
             }
