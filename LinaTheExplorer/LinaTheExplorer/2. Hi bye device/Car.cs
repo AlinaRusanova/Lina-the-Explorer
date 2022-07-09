@@ -8,28 +8,33 @@ namespace Hi_bye_device
 {
     public class Car
     {
-        public string WelcomingMessage { get; init; }
-        // public DriversName DriversName { get; init; }
-        public string DriversName { get; init; }
-        //  public CarModel CarModel { get; init; }
+        public string WelcomingMessage { get; init; }       
+        public string DriversName { get; init; }        
         public string CarModel { get; init; }
         public int CarNumber { get; init; }
         public int DriverWaitingTime { get; init; }
 
-        public bool SelectedDriver { get; set; }
 
-        public Car(string welcomeMsg, /*DriversName*/ string driverName, /*CarModel*/ string carModel, int carNo, int waitTime, bool selectedDriver = false)
+        public Car(string welcomeMsg, string driverName, string carModel, int carNo, int waitTime) 
         {
             WelcomingMessage = welcomeMsg;
             DriversName = driverName;
             CarModel = carModel;
             CarNumber = carNo;
             DriverWaitingTime = waitTime;
-            SelectedDriver = selectedDriver;
         }
 
-
-
-
+        #region for random generation
+        //public DriversName DriversNameR { get; init; }
+        //public CarModel CarModelR { get; init; }
+        //public Car(string welcomeMsg, DriversName driverName, CarModel carModel, int carNo, int waitTime) 
+        //{
+        //    WelcomingMessage = welcomeMsg;
+        //    DriversNameR = driverName;
+        //    CarModelR = carModel;
+        //    CarNumber = carNo;
+        //    DriverWaitingTime = waitTime;
+        //}
+        #endregion
     }
 }

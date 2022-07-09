@@ -7,24 +7,7 @@ using System.Threading.Tasks;
 namespace Hi_bye_device
 {
     public class ListOfCars
-    {
-     //   private static int countOfCarsInList = 100;
-       // private static Random rn = new Random();
-        //public static List<Car> GenerateListOfCars()
-        //{
-        //    List<Car> listOfCars = new List<Car>();
-
-        //    var welcomingMessage = WelcomingMessage.GenerateWelcomeList();
-
-        //    for (int i = 0; i < countOfCarsInList; i++)
-        //    {
-        //        listOfCars.Add(new Car(welcomingMessage[rn.Next(welcomingMessage.Length)].ToString(), EnumRandom.RandomEnum<DriversName>(), EnumRandom.RandomEnum<CarModel>(), rn.Next(0000,9999), rn.Next(3, 140) ));
-        //    }
-
-        //    return listOfCars;
-        //}
-
-
+    {      
         public static void Appear(List<Car> listOfCars)
         {
             Console.WriteLine("The following drivers travel along Lina's route:");
@@ -37,9 +20,22 @@ namespace Hi_bye_device
 
         }
 
+        #region for random generation
+        //private static int countOfCarsInList = 100;
+        //private static Random rn = new Random();
+        //public static List<Car> GenerateListOfCars()
+        //{
+        //    List<Car> listOfCars = new List<Car>();
 
-       
+        //    var welcomingMessage = WelcomingMessage.GenerateWelcomeList();
 
+        //    for (int i = 0; i < countOfCarsInList; i++)
+        //    {
+        //        listOfCars.Add(new Car(welcomingMessage[rn.Next(welcomingMessage.Length)].ToString(), EnumRandom.RandomEnum<DriversName>(), EnumRandom.RandomEnum<CarModel>(), rn.Next(0000, 9999), rn.Next(3, 140)));
+        //    }
 
+        //    return listOfCars;
+        //}
+        #endregion
     }
 }

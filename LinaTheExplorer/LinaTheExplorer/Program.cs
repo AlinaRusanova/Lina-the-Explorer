@@ -10,18 +10,16 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            //  var listOfCars = ListOfCars.GenerateListOfCars();
-
-            string filePath = @"D:\Lina\LinaTheExplorer\LinaTheExplorer\2. Hi bye device\trips.json";
-            string trips = File.ReadAllText(filePath);
-            List<Car> listOfCars = JsonConvert.DeserializeObject<List<Car>>(trips);
-
+          
+            string trips = File.ReadAllText(PathToFile.GetSystemPath());
+                
+               List<Car> listOfCars = JsonConvert.DeserializeObject<List<Car>>(trips);
 
                 ListOfCars.Appear(listOfCars);
 
                 Console.WriteLine();
 
-                RulesForDevice.ShowSelectedCars(listOfCars);
+                SelectedCars.ShowSelectedCars(listOfCars);
 
                Console.ReadLine();
             }

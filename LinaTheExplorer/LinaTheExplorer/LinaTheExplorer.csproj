@@ -6,6 +6,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="2. Hi bye device\trips_.json" />
+    <None Remove="trips.json" />
+    <None Remove="trips_.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="trips_.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="2. Hi bye device\trips_.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="2. Hi bye device\trips.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="2. Hi bye device\trips.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
