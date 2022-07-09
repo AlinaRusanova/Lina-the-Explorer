@@ -10,8 +10,7 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            string path = @"\2. Hi bye device\trips_.json";
-            string trips = File.ReadAllText(Directory.GetCurrentDirectory()+ path);
+            string trips = File.ReadAllText(@"2. Hi bye device\trips_.json");
                 
                List<Car> listOfCars = JsonConvert.DeserializeObject<List<Car>>(trips);
 
