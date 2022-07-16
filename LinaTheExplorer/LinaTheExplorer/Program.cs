@@ -6,7 +6,8 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            
+          
+            ListOfClothing.FindFile();
         }
     }
 }
