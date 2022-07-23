@@ -21,7 +21,7 @@ namespace LinaTheExplorer
             _temp = prefTemp;
         }
         
-        public static void FindFile()
+        public static List<ListOfClothing> CreateListOfClothing ()
         {
             try
             {
@@ -46,9 +46,7 @@ namespace LinaTheExplorer
             {
                 foreach (var clothes in listOfClothing)
                 {
-                    if (clothes._temp != 0 & clothes._suit != null)
-                        Console.WriteLine($"Clothes:{clothes._suit}, pref temp = {clothes._temp}");
-                    else
+                    if (clothes._temp == 0 & clothes._suit == null)
                     {
                         Exception ex = new Exception();
                         Console.WriteLine("File doesn't consiste information that we need");
@@ -56,8 +54,16 @@ namespace LinaTheExplorer
                     }
                 }
             }
-
+            return listOfClothing;
         }
+
+        public static void ListAppear(List<ListOfClothing> listOfClothing)
+        {
+            foreach (var clothes in listOfClothing)
+            {
+                Console.WriteLine($"Clothes:{clothes._suit}, pref temp = {clothes._temp}");
+            }
+        }       
 
     }
 }
