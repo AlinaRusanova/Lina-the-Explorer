@@ -12,8 +12,8 @@ namespace LinaTheExplorer
         private static string _fileName = @"clothing.json";
         private static List<ListOfClothing> listOfClothing;
 
-        private int _temp { get; set; }
-        private string _suit { get; set; }
+        public int _temp { get; set; }
+        public string _suit { get; set; }
         
         public ListOfClothing(string suitName, int prefTemp)
         {
@@ -63,7 +63,6 @@ namespace LinaTheExplorer
             {
                 Console.WriteLine($"Clothes:{clothes._suit}, pref temp = {clothes._temp}");
             }
-        }       
-
+        }
     }
 }
