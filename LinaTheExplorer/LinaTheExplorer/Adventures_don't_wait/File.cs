@@ -7,26 +7,26 @@ using System.Threading;
 
 namespace LinaTheExplorer
 {
-    public class ListOfClothing
+    public class ClothingEntry
     {
         private static string _fileName = @"clothing.json";
-        private static List<ListOfClothing> listOfClothing;
+        private static List<ClothingEntry> listOfClothing;
 
         public int _temp { get; set; }
         public string _suit { get; set; }
         
-        public ListOfClothing(string suitName, int prefTemp)
+        public ClothingEntry(string suitName, int prefTemp)
         {
             _suit = suitName;
             _temp = prefTemp;
         }
         
-        public static List<ListOfClothing> CreateListOfClothing ()
+        public static List<ClothingEntry> CreateListOfClothing ()
         {
             try
             {
                 string list = File.ReadAllText(_fileName);
-                listOfClothing = JsonConvert.DeserializeObject<List<ListOfClothing>>(list);
+                listOfClothing = JsonConvert.DeserializeObject<List<ClothingEntry>>(list);
             }
             catch (FileNotFoundException ex)
             {
@@ -57,7 +57,7 @@ namespace LinaTheExplorer
             return listOfClothing;
         }
 
-        public static void ListAppear(List<ListOfClothing> listOfClothing)
+        public static void ListAppear(List<ClothingEntry> listOfClothing)
         {
             foreach (var clothes in listOfClothing)
             {
