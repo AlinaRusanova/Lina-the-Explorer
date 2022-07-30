@@ -9,26 +9,26 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            var argsObj = new ArgsParser(args);
-            List<int> tripDates = argsObj.getTripDates();
-            string tripCity = argsObj.getTripCity();
+            //var argsObj = new ArgsParser(args);
+            //List<int> tripDates = argsObj.getTripDates();
+            //string tripCity = argsObj.getTripCity();
 
 
             #region localData
-            //string tripCity = "Kyiv";
-            //DateTime startVacFullDate = DateTime.Parse("2022/08/22");
-            //int startVacDay = startVacFullDate.Day;
+            string tripCity = "Kyiv";
+            DateTime startVacFullDate = DateTime.Parse("2022/08/22");
+            int startVacDay = startVacFullDate.Day;
 
-            //int countDays = 4;
-            //var endVacFullDate = startVacFullDate.AddDays(countDays);
-            //int endVacDay = endVacFullDate.Day;
+            int countDays = 4;
+            var endVacFullDate = startVacFullDate.AddDays(countDays);
+            int endVacDay = endVacFullDate.Day;
 
-            //var tripDates = new List<int>();
+            var tripDates = new List<int>();
 
-            //for (int day = startVacDay; day <= endVacDay; day++)
-            //{
-            //    daysVac.Add(day);
-            //}
+            for (int day = startVacDay; day <= endVacDay; day++)
+            {
+                tripDates.Add(day);
+            }
 
             #endregion
 
@@ -36,7 +36,6 @@ namespace LinaTheExplorer
             
 
             List<WeatherData> weatherInfo = new List<WeatherData>();
-
             int[] arrayOfTemp = WeatherResponse.GetWeather(tripCity);
 
             foreach (var day in tripDates)
