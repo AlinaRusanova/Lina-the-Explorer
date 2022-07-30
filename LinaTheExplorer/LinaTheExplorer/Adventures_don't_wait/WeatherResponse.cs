@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.IO;
 using System.Net;
 
@@ -10,7 +9,8 @@ namespace LinaTheExplorer
 
         public static int[] GetWeather(string city)
         {
-            string url1 = $"https://65130ff8-40ce-4af3-b822-611ec2546736.mock.pstmn.io/weather/source_b?year=2022&month=07&city={city}";
+            string url1 = $"https://65130ff8-40ce-4af3-b822-611ec2546736.mock.pstmn.io/weather/source_a?year=2022&month=07&city={city}";
+
             int[] _temp1 = WeatherResult(url1);
 
             string url2 = $"https://65130ff8-40ce-4af3-b822-611ec2546736.mock.pstmn.io/weather/source_b?year=2022&month=07&city={city}";
