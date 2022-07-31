@@ -32,7 +32,14 @@ namespace LinaTheExplorer
 
             #endregion
 
-            var listOfClothing = ClothingEntry.CreateListOfClothing();
+            List<ClothingEntry> listOfClothing = null;
+            try {
+                listOfClothing = ClothingEntry.CreateListOfClothing();
+            } catch (Exception ex) {
+                Console.WriteLine("Faced an error reading a datafile. Error msg: " + ex.Message);
+                Console.ReadLine();
+                Environment.Exit(1);
+            }
             
 
             List<WeatherData> weatherInfo = new List<WeatherData>();
