@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Collections.Generic;
+using System;
 
 namespace LinaTheExplorer
 {
@@ -17,12 +18,14 @@ namespace LinaTheExplorer
             string url2 = $"https://65130ff8-40ce-4af3-b822-611ec2546736.mock.pstmn.io/weather/source_b?year=2022&month=07&city={city}";
             int[] _temp2 = WeatherResult<int[]>(url2);
 
-                 int[] temperature = new int[_temp1.Count];
+            int minLength = Math.Min(_temp1.Count, _temp2.Length);
+            int[] temperature = new int[minLength];
 
             for (int i = 0; i < temperature.Length; i++)
             {
-                temperature[i] = (_temp1[i+1] + _temp2[i]) / 2;
+                temperature[i] = (_temp1[i + 1] + _temp2[i]) / 2;
             }
+
 
             return temperature; 
         }

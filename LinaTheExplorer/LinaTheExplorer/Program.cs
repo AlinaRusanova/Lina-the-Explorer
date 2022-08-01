@@ -9,26 +9,26 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            //var argsObj = new ArgsParser(args);
-            //List<int> tripDates = argsObj.getTripDates();
-            //string tripCity = argsObj.getTripCity();
+            var argsObj = new ArgsParser(args);
+            List<int> tripDates = argsObj.getTripDates();
+            string tripCity = argsObj.getTripCity();
 
 
             #region localData
-            string tripCity = "Kyiv";
-            DateTime startVacFullDate = DateTime.Parse("2022/08/22");
-            int startVacDay = startVacFullDate.Day;
+            //string tripCity = "Kyiv";
+            //DateTime startVacFullDate = DateTime.Parse("2022/08/26");
+            //int startVacDay = startVacFullDate.Day;
 
-            int countDays = 4;
-            var endVacFullDate = startVacFullDate.AddDays(countDays);
-            int endVacDay = endVacFullDate.Day;
+            //int countDays = 4;
+            //var endVacFullDate = startVacFullDate.AddDays(countDays);
+            //int endVacDay = endVacFullDate.Day;
 
-            var tripDates = new List<int>();
+            //var tripDates = new List<int>();
 
-            for (int day = startVacDay; day <= endVacDay; day++)
-            {
-                tripDates.Add(day);
-            }
+            //for (int day = startVacDay; day <= endVacDay; day++)
+            //{
+            //    tripDates.Add(day);
+            //}
 
             #endregion
 
@@ -47,15 +47,22 @@ namespace LinaTheExplorer
 
             foreach (var day in tripDates)
             {
-                int temp = arrayOfTemp[day - 1];
+                try
+                {
+                    int temp = arrayOfTemp[day - 1];
 
-                DateTime date = DateTime.Parse($"2022/07/{day}");
-                var cl = listOfClothing.Where(cl => cl._temp <= temp + 3 && cl._temp >= temp - 3).ToList().FirstOrDefault();
+                    DateTime date = DateTime.Parse($"2022/07/{day}");
+                    var cl = listOfClothing.Where(cl => cl._temp <= temp + 3 && cl._temp >= temp - 3).ToList().FirstOrDefault();
 
-                if (cl != null)
-                { weatherInfo.Add(new WeatherData(date, temp, cl._suit)); }
-                else { weatherInfo.Add(new WeatherData(date, temp, "no data")); }
+                    if (cl != null)
+                    { weatherInfo.Add(new WeatherData(date, temp, cl._suit)); }
+                    else { weatherInfo.Add(new WeatherData(date, temp, "no data")); }
+                }
+                catch
+                { Console.WriteLine($"Sorry! We don`t have forecast for {day}.07.2022"); }
+
             }
+
 
 
             foreach (var day in weatherInfo)
