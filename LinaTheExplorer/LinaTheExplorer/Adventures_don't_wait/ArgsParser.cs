@@ -15,7 +15,7 @@ namespace LinaTheExplorer
         public List<int> getTripDates()
         {
             string[] datePar = args[0].Split('-');
-            int startVacDay = DateTime.Parse(datePar[0]).Day;
+            int startVacDay = DateOnly.Parse(datePar[0]).Day;
             int countDays = int.Parse(datePar[1]);
 
             var endVacDay = startVacDay + countDays;
