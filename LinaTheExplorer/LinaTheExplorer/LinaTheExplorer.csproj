@@ -6,17 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="schema.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="clothing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="schema.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.14" />
+    <PackageReference Include="NJsonSchema" Version="10.7.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties clothing_1json__JsonSchema="http://json-schema.org/draft-07/schema#" /></VisualStudio></ProjectExtensions>
 
 </Project>

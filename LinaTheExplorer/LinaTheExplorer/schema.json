@@ -1,0 +1,53 @@
+//{
+//  "$schema": "http://json-schema.org/draft-07/schema#",
+//  "$id": "https://example.com/object1640885229.json",
+//  "type": "object",
+//  "required": [
+//    "suitName",
+//    "prefTemp"
+//  ],
+//  "properties": {
+//    "suitName": { "type": "string" },
+//    "prefTemp": { "type": "integer" }
+//  }
+
+//  }
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1659807588.json",
+  "title": "Root",
+  "type": "array",
+  "default": [],
+  "items": {
+    "$id": "#root/items",
+    "title": "Items",
+    "type": "object",
+    "required": [
+      "suitName",
+      "prefTemp"
+    ],
+    "properties": {
+      "suitName": {
+        "$id": "#root/items/suitName",
+        "title": "Suitname",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "suitA_cold"
+        ],
+        "pattern": "^.*$"
+      },
+      "prefTemp": {
+        "$id": "#root/items/prefTemp",
+        "title": "Preftemp",
+        "type": "integer",
+        "examples": [
+          -1
+        ],
+        "default": 0
+      }
+    }
+  }
+
+}

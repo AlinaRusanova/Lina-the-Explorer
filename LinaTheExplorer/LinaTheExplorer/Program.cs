@@ -9,33 +9,17 @@ namespace LinaTheExplorer
     {
         static void Main(string[] args)
         {
-            //var argsObj = new ArgsParser(args);
-            //List<int> tripDates = argsObj.getTripDates();
-            //string tripCity = argsObj.getTripCity();
+            var argsObj = new ArgsParser(args);
+            List<int> tripDates = argsObj.getTripDates();
+            string tripCity = argsObj.getTripCity();
 
-
-            #region localData
-            string tripCity = "Odesa";
-            DateOnly startVacFullDate = DateOnly.Parse("2022/08/01");
-            int startVacDay = startVacFullDate.Day;
-
-            int countDays = 30;
-            var endVacFullDate = startVacFullDate.AddDays(countDays);
-            int endVacDay = endVacFullDate.Day;
-
-            var tripDates = new List<int>();
-
-            for (int day = startVacDay; day <= endVacDay; day++)
-            {
-                tripDates.Add(day);
-            }
-
-            #endregion
 
             List<ClothingEntry> listOfClothing = null;
             try {
                 listOfClothing = ClothingEntry.CreateListOfClothing();
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine("Faced an error reading a datafile. Error msg: " + ex.Message);
                 Console.ReadLine();
                 Environment.Exit(1);
