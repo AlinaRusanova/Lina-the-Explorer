@@ -23,12 +23,11 @@ namespace LinaTheExplorer
             _temp = prefTemp;
         }
 
-        [Obsolete]
         public static List<ClothingEntry> CreateListOfClothing ()
         {
             string list = File.ReadAllText(_fileName);
             var schema = JSchema.Parse(File.ReadAllText(_schemaJson));
-            var listTemp = JObject.Parse(list);
+            var listTemp = JArray.Parse(list);
             bool valid = listTemp.IsValid(schema);
 
             if (!valid)
