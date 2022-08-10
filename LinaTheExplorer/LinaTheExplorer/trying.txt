@@ -1,0 +1,44 @@
+ public TestContext TestContext { get; set; }    
+        [DataSource ("Microsoft.VisualStudio.TestTools.DataSource.XML",
+            "testData.xml", 
+            "Anagram",
+            DataAccessMethod.Sequential)]
+
+
+ string list = File.ReadAllText(_fileName);
+
+            JsonSchema schema = JsonSchema.Parse(schemaJson);
+            listOfClothing = JsonConvert.DeserializeObject<List<ClothingEntry>>(list);
+            JObject clothing = JObject.Parse(listOfClothing.ToString());
+          //  IList<string> messages;
+            bool valid = clothing.IsValid(schema); //, out messages
+            return listOfClothing;
+
+
+                                              
+                                              'type': 'array',
+                                              'properties':
+
+string list = File.ReadAllText(_fileName);
+            listOfClothing = JsonConvert.DeserializeObject<List<ClothingEntry>>(list);
+
+            var schema = JsonSchema.FromSampleJson(schemaJson);
+
+            var errorsForValidJson = schema.Validate(listOfClothing.ToString());
+
+            Console.WriteLine("valid errors:");
+            foreach (var error in errorsForValidJson) Console.WriteLine(error);
+
+            return listOfClothing; 
+
+
+
+
+@"[                                         
+                                              'type': 'array',
+                                              'properties':
+                                              {
+                                                'suitName': {'type':'string'},
+                                                'prefTemp': {'type': 'integer' }
+                                              }
+                                            ]";
