@@ -1,0 +1,10 @@
+[
+  {
+    "suitName": "suitA_cold",
+    "prefTemp": -1
+  },
+  {
+    "suitName": "suitA_hot",
+    "prefTemp": 16
+  }
+]

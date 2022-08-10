@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventures_don't_wait", "Adventures_don't_wait\Adventures_don't_wait.csproj", "{BA0E00BA-7DA6-4338-AA55-70FBDDB034D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinaTheExplorer", "LinaTheExplorer.csproj", "{A73300EA-7BD2-42AE-B539-AD2A0EC81B17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA0E00BA-7DA6-4338-AA55-70FBDDB034D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA0E00BA-7DA6-4338-AA55-70FBDDB034D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA0E00BA-7DA6-4338-AA55-70FBDDB034D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA0E00BA-7DA6-4338-AA55-70FBDDB034D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73300EA-7BD2-42AE-B539-AD2A0EC81B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73300EA-7BD2-42AE-B539-AD2A0EC81B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73300EA-7BD2-42AE-B539-AD2A0EC81B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73300EA-7BD2-42AE-B539-AD2A0EC81B17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8612B6E2-D511-4831-82B4-887A3814AD31}
+		SolutionGuid = {0B75BAB1-33C1-4C97-88DE-62E4DFD09BD9}
 	EndGlobalSection
 EndGlobal
