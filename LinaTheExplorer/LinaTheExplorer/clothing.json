@@ -1,10 +1,40 @@
 [
   {
+    "suitName": "suitA_hot_9",
+    "prefTemp": 9
+  },
+
+  {
     "suitName": "suitA_cold",
     "prefTemp": -1
   },
   {
-    "suitName": "suitA_hot",
+    "suitName": "suitA_hot_16",
     "prefTemp": 16
+  },
+  {
+    "suitName": "suitA_hot_15",
+    "prefTemp": 15
+  },
+  {
+    "suitName": "suitA_hot_14",
+    "prefTemp": 14
+  },
+  {
+    "suitName": "suitA_hot_13",
+    "prefTemp": 13
+  },
+  {
+    "suitName": "suitA_hot_12",
+    "prefTemp": 12
+  },
+  {
+    "suitName": "suitA_hot_11",
+    "prefTemp": 11
+  },
+  {
+    "suitName": "suitA_hot_10",
+    "prefTemp": 10
   }
+
 ]

@@ -14,14 +14,17 @@ namespace LinaTheExplorer
         private static string _schemaJson = @"schema.json";
         private static List<ClothingEntry> listOfClothing;
 
-        public int _temp { get; set; }
-        public string _suit { get; set; }
-        
+        public int Temp { get; set; }
+        public string Suit { get; set; }
+
+
         public ClothingEntry(string suitName, int prefTemp)
         {
-            _suit = suitName;
-            _temp = prefTemp;
+            Suit = suitName;
+            Temp = prefTemp;
         }
+
+     //   public ClothingEntry() { }
 
         public static List<ClothingEntry> CreateListOfClothing ()
         {
@@ -43,7 +46,7 @@ namespace LinaTheExplorer
         {
             foreach (var clothes in listOfClothing)
             {
-                Console.WriteLine($"Clothes:{clothes._suit}, pref temp = {clothes._temp}");
+                Console.WriteLine($"Clothes:{clothes.Suit}, pref temp = {clothes.Temp}");
             }
         }
     }

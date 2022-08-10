@@ -36,10 +36,11 @@ namespace LinaTheExplorer
                     int? temp = arrayOfTemp[day - 1];
 
                     DateOnly date = DateOnly.Parse($"2022/07/{day}");
-                    var cl = listOfClothing.Where(cl => cl._temp <= temp + 3 && cl._temp >= temp - 3).ToList().FirstOrDefault();
+  
+                    var cl = listOfClothing.OrderBy(cl=> Math.Abs((int)(cl.Temp-temp))).FirstOrDefault();
 
                     if (cl != null)
-                    { weatherInfo.Add(new WeatherData(date, temp, cl._suit)); }
+                    { weatherInfo.Add(new WeatherData(date, temp, cl.Suit)); }
                     else { weatherInfo.Add(new WeatherData(date, temp, "no data")); }
 
                 }
